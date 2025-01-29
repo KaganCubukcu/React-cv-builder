@@ -32,17 +32,17 @@ export function SummaryIntro() {
 
             <div className="mb-8">
                 <h1 className="text-4xl font-bold mb-4">
-                    Finally, let’s work on your
+                    Finally, let&apos;s work on your
                     <div className="text-5xl mt-2">Summary</div>
                 </h1>
 
                 <div className="mt-8">
                     <h2 className="text-xl font-semibold mb-4">Here&apos;s what you need to know:</h2>
                     <p className="text-gray-700">
-                        Your summary shows employers you’re right for their job.
+                        Your summary shows employers you&apos;re right for their job.
                     </p>
                     <p className="text-gray-700">
-                        We’ll help you write a great one with expert content you can customize.
+                        We&apos;ll help you write a great one with expert content you can customize.
                     </p>
                 </div>
             </div>

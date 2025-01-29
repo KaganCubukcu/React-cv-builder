@@ -23,7 +23,12 @@ export function EducationIntro() {
 
     return (
         <div className="flex-1 max-w-2xl mx-auto px-8 py-6">
-            <button className="text-blue-600 mb-4">← Go Back</button>
+            <button
+                onClick={() => navigate(-1)}
+                className="text-blue-600 mb-4"
+            >
+                ← Go Back
+            </button>
 
             <div className="mb-8">
                 <h1 className="text-4xl font-bold mb-4">

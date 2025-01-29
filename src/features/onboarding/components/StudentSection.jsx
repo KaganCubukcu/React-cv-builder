@@ -21,6 +21,7 @@ export function StudentSection() {
                 >
                     Yes
                 </button>
+
                 <button
                     onClick={() => dispatch(setIsStudent(false))}
                     className={`px-8 py-4 rounded-lg border-2 transition-all ${isStudent === false
@@ -34,3 +35,4 @@ export function StudentSection() {
         </div>
     )
 }
+

@@ -42,7 +42,12 @@ export function ContactForm() {
 
     return (
         <div className="flex-1 max-w-2xl mx-auto px-8 py-6">
-            <button className="text-blue-600 mb-4">← Go Back</button>
+            <button
+                onClick={() => navigate(-1)}
+                className="text-blue-600 mb-4"
+            >
+                ← Go Back
+            </button>
 
             <h1 className="text-2xl font-bold mb-2">
                 What&apos;s the best way for employers to contact you?

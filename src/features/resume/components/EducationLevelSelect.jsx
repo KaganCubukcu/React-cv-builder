@@ -45,7 +45,12 @@ export function EducationLevelSelect() {
 
     return (
         <div className="flex-1 max-w-2xl mx-auto px-8 py-6">
-            <button className="text-blue-600 mb-4">← Go Back</button>
+            <button
+                onClick={() => navigate(-1)}
+                className="text-blue-600 mb-4"
+            >
+                ← Go Back
+            </button>
 
             <h1 className="text-2xl font-bold text-center mb-4">
                 What best describes your level of education?

@@ -19,7 +19,12 @@ export function ResumePurpose() {
     return (
         <div className="min-h-screen bg-white">
             <div className="max-w-3xl mx-auto px-4 py-8">
-                <button className="text-blue-600 mb-4">← Go Back</button>
+                <button
+                    onClick={() => navigate(-1)}
+                    className="text-blue-600 mb-4"
+                >
+                    ← Go Back
+                </button>
 
                 <h1 className="text-3xl font-bold text-center mb-4">
                     Why do you need a resume?
