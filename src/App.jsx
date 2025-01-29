@@ -21,11 +21,18 @@ function MainContent() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative">
       <div className="max-w-3xl mx-auto px-4 py-8">
         {visibleSections.includes('experience') && <ExperienceSection />}
         {visibleSections.includes('student') && <StudentSection />}
         {visibleSections.includes('education') && <EducationSection />}
+      </div>
+      <div className="fixed bottom-24 right-150">
+        <button
+          className="px-12 py-3 bg-yellow-400 text-gray-900 font-medium rounded-lg hover:bg-yellow-500 transition-colors"
+        >
+          Next
+        </button>
       </div>
     </div>
   )
