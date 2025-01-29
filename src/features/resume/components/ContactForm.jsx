@@ -3,6 +3,7 @@ import { updateContactInfo, selectContact } from '../../../store/contact/contact
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import { LoadingSpinner } from '../../../shared/components/LoadingSpinner';
+import { setCurrentStep, completeStep } from '../../../store/resume-progress/resumeProgressSlice';
 
 export function ContactForm() {
     const dispatch = useDispatch()
@@ -10,6 +11,7 @@ export function ContactForm() {
 
     const navigate = useNavigate()
     const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
         // Show loading for 1 second when component mounts
         const timer = setTimeout(() => {
@@ -18,19 +20,26 @@ export function ContactForm() {
 
         return () => clearTimeout(timer)
     }, [])
+
     const handleInputChange = (e) => {
         const { name, value } = e.target
         dispatch(updateContactInfo({ [name]: value }))
     }
+
     const handleNext = () => {
         setIsLoading(true)
+        // Mark Heading (step 1) as completed and set current step to 2
+        dispatch(completeStep(1))
+        dispatch(setCurrentStep(2))
         setTimeout(() => {
             navigate('/resume/purpose')
         }, 1000)
     }
+
     if (isLoading) {
         return <LoadingSpinner />
     }
+
     return (
         <div className="flex-1 max-w-2xl mx-auto px-8 py-6">
             <button className="text-blue-600 mb-4">← Go Back</button>
@@ -149,7 +158,10 @@ export function ContactForm() {
                 <button className="px-6 py-2 text-blue-700 font-medium hover:bg-blue-50 rounded-lg transition-colors">
                     Preview
                 </button>
-                <button onClick={handleNext()} className="px-6 py-2 bg-yellow-400 text-gray-900 font-medium rounded-lg hover:bg-yellow-500 transition-colors">
+                <button
+                    onClick={handleNext}
+                    className="px-6 py-2 bg-yellow-400 text-gray-900 font-medium rounded-lg hover:bg-yellow-500 transition-colors"
+                >
                     Next: Professional experience
                 </button>
             </div>
