@@ -6,6 +6,7 @@ import resumeProgressReducer from './resume-progress/resumeProgressSlice'
 import experienceTypeReducer from './experience-type/experienceTypeSlice'
 import educationReducer from './education/educationSlice'
 import skillsReducer from './skills/skillsSlice'
+import summaryReducer from './summary/summarySlice'
 
 export const store = configureStore({
     reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
         resumeProgress: resumeProgressReducer,
         experienceType: experienceTypeReducer,
         education: educationReducer,
-        skills: skillsReducer
+        skills: skillsReducer,
+        summary: summaryReducer
     }
 })

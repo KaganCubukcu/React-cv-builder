@@ -11,6 +11,8 @@ import { EducationForm } from './components/EducationForm'
 import { SkillsIntro } from './components/SkillsIntro'
 import { SkillsSelect } from './components/SkillsSelect'
 import { Routes, Route, Navigate } from 'react-router-dom'
+import { SummaryIntro } from './components/SummaryIntro'
+import { SummarySelect } from './components/SummarySelect'
 
 export function Resume() {
     return (
@@ -29,6 +31,8 @@ export function Resume() {
                     <Route path="education-form" element={<EducationForm />} />
                     <Route path="skills" element={<SkillsIntro />} />
                     <Route path="skills-select" element={<SkillsSelect />} />
+                    <Route path="summary" element={<SummaryIntro />} />
+                    <Route path="summary-select" element={<SummarySelect />} />
                 </Routes>
             </div>
             <ResumePreview />
