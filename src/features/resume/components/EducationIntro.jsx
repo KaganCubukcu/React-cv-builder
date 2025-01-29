@@ -4,16 +4,16 @@ import { useState } from 'react'
 import { LoadingSpinner } from '../../../shared/components/LoadingSpinner'
 import { setCurrentStep } from '../../../store/resume-progress/resumeProgressSlice'
 
-export function ExperienceIntro() {
+export function EducationIntro() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const [isLoading, setIsLoading] = useState(false)
 
     const handleNext = () => {
         setIsLoading(true)
-        dispatch(setCurrentStep(2)) // Set current step to Professional Experience
+        dispatch(setCurrentStep(3)) // Set current step to Education
         setTimeout(() => {
-            navigate('/resume/experience-type')
+            navigate('/resume/education-level')
         }, 1000)
     }
 
@@ -27,18 +27,18 @@ export function ExperienceIntro() {
 
             <div className="mb-8">
                 <h1 className="text-4xl font-bold mb-4">
-                    Now, let&apos;s fill out your
-                    <div className="text-5xl mt-2">Experience</div>
+                    Great, let&apos;s work on your
+                    <div className="text-5xl mt-2">Education</div>
                 </h1>
 
                 <div className="space-y-4 mt-8">
                     <h2 className="text-xl font-semibold">Here&apos;s what you need to know:</h2>
                     <div className="space-y-2">
                         <p className="text-gray-700">
-                            Employers scan your resume to see if you&apos;re a match.
+                            Employers quickly scan the education section.
                         </p>
                         <p className="text-gray-700">
-                            We&apos;ll suggest bullet points that make a great impression.
+                            We&apos;ll take care of the formatting so it&apos;s easy to find.
                         </p>
                     </div>
                 </div>

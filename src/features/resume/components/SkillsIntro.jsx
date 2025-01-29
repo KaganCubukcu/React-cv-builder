@@ -4,16 +4,16 @@ import { useState } from 'react'
 import { LoadingSpinner } from '../../../shared/components/LoadingSpinner'
 import { setCurrentStep } from '../../../store/resume-progress/resumeProgressSlice'
 
-export function ExperienceIntro() {
+export function SkillsIntro() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const [isLoading, setIsLoading] = useState(false)
 
     const handleNext = () => {
         setIsLoading(true)
-        dispatch(setCurrentStep(2)) // Set current step to Professional Experience
+        dispatch(setCurrentStep(4)) // Set current step to Skills
         setTimeout(() => {
-            navigate('/resume/experience-type')
+            navigate('/resume/skills-select')
         }, 1000)
     }
 
@@ -23,24 +23,27 @@ export function ExperienceIntro() {
 
     return (
         <div className="flex-1 max-w-2xl mx-auto px-8 py-6">
-            <button className="text-blue-600 mb-4">← Go Back</button>
+            <button
+                onClick={() => navigate(-1)}
+                className="text-blue-600 mb-4"
+            >
+                ← Go Back
+            </button>
 
             <div className="mb-8">
                 <h1 className="text-4xl font-bold mb-4">
-                    Now, let&apos;s fill out your
-                    <div className="text-5xl mt-2">Experience</div>
+                    Next, let&apos;s take care of your
+                    <div className="text-5xl mt-2">Skills</div>
                 </h1>
 
-                <div className="space-y-4 mt-8">
-                    <h2 className="text-xl font-semibold">Here&apos;s what you need to know:</h2>
-                    <div className="space-y-2">
-                        <p className="text-gray-700">
-                            Employers scan your resume to see if you&apos;re a match.
-                        </p>
-                        <p className="text-gray-700">
-                            We&apos;ll suggest bullet points that make a great impression.
-                        </p>
-                    </div>
+                <div className="mt-8">
+                    <h2 className="text-xl font-semibold mb-4">Here&apos;s what you need to know:</h2>
+                    <p className="text-gray-700">
+                        Employers scan skills for relevant keywords.
+                    </p>
+                    <p className="text-gray-700">
+                        We&apos;ll help you choose the best ones.
+                    </p>
                 </div>
             </div>
 
